@@ -95,7 +95,7 @@ const locationSource = createMutableSource(window, {
 function Example() {
   const config = useMemo(
     () => ({
-      getSnapshot: window => win.location.pathname,
+      getSnapshot: window => window.location.pathname,
       subscribe: (window, callback) => {
         window.addEventListener("popstate", callback);
         return () => window.removeEventListener("popstate", callback);
